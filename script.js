@@ -10,7 +10,7 @@ L.tileLayer(
 ).addTo(map);
 
 // MEMANGGIL GEOJSON
-fetch('../DATA/rs_bekasi.geojson')
+fetch('rs_bekasi.geojson')
 
 .then(response => response.json())
 
