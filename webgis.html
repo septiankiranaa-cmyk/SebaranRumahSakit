@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebGIS Rumah Sakit Kota Bekasi</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <!-- LEAFLET CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR KIRI -->
+    <div class="medical-sidebar sidebar-left">
+
+        <img src="../IMAGES/bandage.png" class="med-img img-kiri-1">
+
+        <img src="../IMAGES/RS.png" class="med-img img-kiri-2">
+
+        <img src="../IMAGES/suntikan.png" class="med-img img-kiri-3">
+
+        <img src="../IMAGES/jantung.png" class="med-img img-kiri-4">
+
+    </div>
+
+    <!-- SIDEBAR KANAN -->
+    <div class="medical-sidebar sidebar-right">
+
+        <img src="../IMAGES/kusying.png" class="med-img img-kanan-1">
+
+        <img src="../IMAGES/stetoskop.png" class="med-img img-kanan-2">
+
+        <img src="../IMAGES/obat.png" class="med-img img-kanan-3">
+
+        <img src="../IMAGES/dna.png" class="med-img img-kanan-4">
+
+    </div>
+
+    <!-- BORDER -->
+    <div class="page-border">
+
+        <!-- HEADER -->
+        <header>
+
+            <h1>Geographic Information System</h1>
+
+            <p>Healthcare Services — Kota Bekasi</p>
+
+            <div class="line-separator"></div>
+
+        </header>
+
+        <!-- NAVBAR -->
+        <nav>
+
+            <a href="../index.html">
+                Beranda
+            </a>
+
+            <a href="webgis.html" class="active">
+                Peta Sebaran RS
+            </a>
+
+            <a href="biodata.html">
+                Biodata
+            </a>
+
+        </nav>
+
+        <!-- MAP -->
+        <main>
+
+            <div id="map"></div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                • © 2026 Septian Kirana Wardani •
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- LEAFLET JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- SCRIPT MAP -->
+    <script>
+
+        // MEMBUAT MAP
+        var map = L.map('map').setView([-6.2416, 106.9924], 11);
+
+        // BASEMAP
+        L.tileLayer(
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                attribution: '&copy; OpenStreetMap Contributors'
+            }
+        ).addTo(map);
+
+        // MEMANGGIL GEOJSON
+        fetch('../DATA/rs_bekasi.geojson')
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            L.geoJSON(data, {
+
+                onEachFeature: function(feature, layer){
+
+                    layer.bindPopup(
+
+                        "<b>Rumah Sakit :</b> " +
+                        feature.properties["Rumah Sakit"] +
+
+                        "<br><br>" +
+
+                        "<b>Tipe :</b> " +
+                        feature.properties["Tipe"] +
+
+                        "<br><br>" +
+
+                        "<b>Alamat :</b> " +
+                        feature.properties["Alamat"] +
+
+                        "<br><br>" +
+
+                        "<b>Maps :</b><br>" +
+
+                        "<a href='" +
+                        feature.properties["Maps"] +
+                        "' target='_blank'>Buka Google Maps</a>"
+
+                    );
+
+                }
+
+            }).addTo(map);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
