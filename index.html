@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Services - Kota Bekasi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR KIRI -->
+    <div class="medical-sidebar sidebar-left">
+        <img src="IMAGES/bandage.png" class="med-img img-kiri-1">
+        <img src="IMAGES/RS.png" class="med-img img-kiri-2">
+        <img src="IMAGES/obat.png" class="med-img img-kiri-3">
+        <img src="IMAGES/jantung.png" class="med-img img-kiri-4">
+    </div>
+
+    <!-- SIDEBAR KANAN -->
+    <div class="medical-sidebar sidebar-right">
+        <img src="IMAGES/kusying.png" class="med-img img-kanan-1">
+        <img src="IMAGES/stetoskop.png" class="med-img img-kanan-2">
+        <img src="IMAGES/suntikan.png" class="med-img img-kanan-3">
+        <img src="IMAGES/dna.png" class="med-img img-kanan-4">
+    </div>
+
+    <div class="page-border">
+
+        <header>
+            <h1>Geographic Information System</h1>
+
+            <p>Healthcare Services — Kota Bekasi</p>
+
+            <div class="line-separator"></div>
+        </header>
+
+        <nav>
+            <a href="index.html" class="active">Beranda</a>
+
+            <a href="PAGE/webgis.html">Peta Sebaran RS</a>
+
+            <a href="PAGE/biodata.html">Biodata</a>
+        </nav>
+
+        <main>
+
+            <div class="hero-section">
+
+                <div class="editorial-badge">
+                    Spatial Information Platform
+                </div>
+
+                <h2>
+                    Eksplorasi Fasilitas Kesehatan Regional
+                </h2>
+
+                <p>
+                    Selamat datang. Platform informasi spasial ini dirancang untuk memetakan serta menyajikan visualisasi sebaran rumah sakit di Kota Bekasi secara transparan dan interaktif.
+                </p>
+
+                <a href="PAGE/webgis.html" class="btn">
+                    Jelajahi Peta
+                </a>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>• © 2026 Septian Kirana Wardani •</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebGIS Rumah Sakit Kota Bekasi</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <!-- LEAFLET CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR KIRI -->
+    <div class="medical-sidebar sidebar-left">
+
+        <img src="../IMAGES/bandage.png" class="med-img img-kiri-1">
+
+        <img src="../IMAGES/RS.png" class="med-img img-kiri-2">
+
+        <img src="../IMAGES/suntikan.png" class="med-img img-kiri-3">
+
+        <img src="../IMAGES/jantung.png" class="med-img img-kiri-4">
+
+    </div>
+
+    <!-- SIDEBAR KANAN -->
+    <div class="medical-sidebar sidebar-right">
+
+        <img src="../IMAGES/kusying.png" class="med-img img-kanan-1">
+
+        <img src="../IMAGES/stetoskop.png" class="med-img img-kanan-2">
+
+        <img src="../IMAGES/obat.png" class="med-img img-kanan-3">
+
+        <img src="../IMAGES/dna.png" class="med-img img-kanan-4">
+
+    </div>
+
+    <!-- BORDER -->
+    <div class="page-border">
+
+        <!-- HEADER -->
+        <header>
+
+            <h1>Geographic Information System</h1>
+
+            <p>Healthcare Services — Kota Bekasi</p>
+
+            <div class="line-separator"></div>
+
+        </header>
+
+        <!-- NAVBAR -->
+        <nav>
+
+            <a href="../index.html">
+                Beranda
+            </a>
+
+            <a href="webgis.html" class="active">
+                Peta Sebaran RS
+            </a>
+
+            <a href="biodata.html">
+                Biodata
+            </a>
+
+        </nav>
+
+        <!-- MAP -->
+        <main>
+
+            <div id="map"></div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                • © 2026 Septian Kirana Wardani •
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- LEAFLET JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR KIRI -->
+    <div class="medical-sidebar sidebar-left">
+        <img src="../IMAGES/bandage.png" class="med-img img-kiri-1">
+        <img src="../IMAGES/RS.png" class="med-img img-kiri-2">
+        <img src="../IMAGES/suntikan.png" class="med-img img-kiri-3">
+        <img src="../IMAGES/jantung.png" class="med-img img-kiri-4">
+    </div>
+
+    <!-- SIDEBAR KANAN -->
+    <div class="medical-sidebar sidebar-right">
+        <img src="../IMAGES/kusying.png" class="med-img img-kanan-1">
+        <img src="../IMAGES/stetoskop.png" class="med-img img-kanan-2">
+        <img src="../IMAGES/obat.png" class="med-img img-kanan-3">
+        <img src="../IMAGES/dna.png" class="med-img img-kanan-4">
+    </div>
+
+    <div class="page-border">
+
+        <header>
+            <h1>Geographic Information System</h1>
+
+            <p>Healthcare Services — Kota Bekasi</p>
+
+            <div class="line-separator"></div>
+        </header>
+
+        <nav>
+            <a href="../index.html">Beranda</a>
+
+            <a href="webgis.html">Peta Sebaran RS</a>
+
+            <a href="biodata.html" class="active">Biodata</a>
+        </nav>
+
+        <main>
+
+            <div class="profile-frame">
+                <img src="../ASSETS/foto formal format.jpg">
+            </div>
+
+            <div class="biodata-card">
+
+                <h2>Profil Pengembang</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <td class="label">Nama</td>
+                        <td>Septian Kirana Wardani</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">NPM</td>
+                        <td>23130304047</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Program Studi</td>
+                        <td>Pendidikan Geografi</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Instansi</td>
+                        <td>Universitas Lampung</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>• © 2026 Septian Kirana Wardani •</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
